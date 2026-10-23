@@ -6,5 +6,6 @@ export const connectDB = async () => {
     console.log("Conectado a MongoDB exitosa:", mongoose.connection.name);
   } catch (error) {
     console.error("Error al conectar a MongoDB:", error.message);
+    process.exit(1); // esto es para que si mongo no esta prendido no arranca
   }
 };
